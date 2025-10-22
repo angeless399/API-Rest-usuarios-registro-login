@@ -15,12 +15,12 @@ formRegistro.addEventListener('submit', (event) => {
     const type = 0
 
     //creo objeto con los datos obtenidos
-    let nvoUsuario = { Name: usuario, Email: email, Image: image, Pass: pass, Type_user: type }
-    console.log(nvoUsuario)
+    const nvoUsuario = { Name: usuario, Email: email, Image: image, Pass: pass, Type_user: type }
+    // console.log(nvoUsuario)
 
     //convierto el objeto a json para pasarlo por la API fetch al backend
     const nvoUsuarioJson = JSON.stringify(nvoUsuario)
-    console.log(nvoUsuarioJson)
+    // console.log(nvoUsuarioJson)
 
     //declaro en enpoint
     const endpoint = 'http://localhost:3000/users/register'
@@ -37,7 +37,7 @@ formRegistro.addEventListener('submit', (event) => {
             })
             //obtengo la respuesta del backend
             const response = await enviarDatos.json()
-            console.log(response)
+            // console.log(response)
             document.querySelector('#message').innerHTML=response.message
 
 
